@@ -19,7 +19,7 @@ export const AdUnit: React.FC<AdUnitProps> = ({ id, sizes, className }) => {
         const bidResponse = await headerBidding.requestBids(id, sizes);
         
         if (bidResponse.bids && bidResponse.bids.length > 0) {
-          const winningBid = bidResponse.bids.reduce((prev, current) => 
+          const winningBid = bidResponse.bids.reduce((prev:any, current:any) => 
             (prev.cpm > current.cpm) ? prev : current
           );
           
